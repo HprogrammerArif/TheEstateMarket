@@ -1,15 +1,38 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContex } from "../../providers/AuthProvider";
 
 const Login = () => {
+
+  const {loginUser} = useContext(AuthContex);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
+
+
+    loginUser(email, password)
+    .then(result => {
+      const user = result.user;
+      console.log(user);
+    })
+    .catch(error => {
+      console.log(error.message);
+    })
+
+  };
+
   return (
     <div>
-      
       <h2 className="text-3xl text-center">Please login</h2>
 
       <div className="hero mt-5">
         <div className="hero-content md:w-3/4 lg:w-1/2">
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -42,7 +65,17 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
-              <div className="text-center"><small>Do not have an account? please <Link className="font-bold text-blue-600 underline" to='/register'>Register</Link> </small></div>
+              <div className="text-center">
+                <small>
+                  Do not have an account? please{" "}
+                  <Link
+                    className="font-bold text-blue-600 underline"
+                    to="/register"
+                  >
+                    Register
+                  </Link>{" "}
+                </small>
+              </div>
             </form>
           </div>
         </div>
