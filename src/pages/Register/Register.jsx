@@ -38,6 +38,9 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+
+         // Show success toast
+         toast.success('Registration Successful');
       })
       .catch((errors) => {
         console.log(errors);
@@ -47,9 +50,10 @@ const Register = () => {
   // Display toast if there's an error
   if (error) {
     toast.error(error);
-  } else{
-    toast.success('Registration Successfull');
-  }
+  } 
+  // else{
+  //   toast.success('Registration Successfull');
+  // }
   
 
   return (

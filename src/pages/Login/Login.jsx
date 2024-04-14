@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContex } from "../../providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
 
@@ -18,6 +20,9 @@ const Login = () => {
     .then(result => {
       const user = result.user;
       console.log(user);
+
+      // Show success toast
+      toast.success('Login Successful');
     })
     .catch(error => {
       console.log(error.message);
@@ -76,6 +81,7 @@ const Login = () => {
                   </Link>{" "}
                 </small>
               </div>
+              <ToastContainer />
             </form>
           </div>
         </div>
