@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="px-4 divide-y dark:bg-gray-100 dark:text-gray-800">
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-        <div className="lg:w-1/3">
+        <div className="lg:w-3/5">
           <a
             rel="noopener noreferrer"
             href="#"
@@ -21,7 +21,7 @@ const Footer = () => {
             </span>
           </a>
 
-          <div className="flex flex-col justify-center items-center lg:items-start">
+          <div className="flex ml-3 flex-col justify-center items-center lg:items-start">
             <p className="my-6">
               2707 W Avenue 30, Los Angeles, <br /> CA 90065 Los
             </p>

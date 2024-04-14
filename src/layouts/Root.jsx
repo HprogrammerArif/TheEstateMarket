@@ -6,7 +6,9 @@ const Root = () => {
   return (
     <div className="container mx-auto font-poppins">
       <Navbar></Navbar>
+      <div className="min-h-96">
       <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );
