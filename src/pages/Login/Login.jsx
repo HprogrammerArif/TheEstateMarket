@@ -67,7 +67,7 @@ const Login = () => {
       <h2 className="text-3xl text-center">Please login</h2>
 
       <div className="hero mt-5">
-        <div className="hero-content md:w-3/4 lg:w-1/2">
+        <div className="hero-content md:w-3/4 lg:w-full">
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
