@@ -4,9 +4,9 @@ import Footer from "../pages/shared/Footer/Footer";
 
 const Root = () => {
   return (
-    <div className="container mx-auto font-poppins">
+    <div className="font-poppins">
       <Navbar></Navbar>
-      <div className="min-h-96">
+      <div className="min-h-[450px] container mx-auto flex justify-center items-center">
       <Outlet></Outlet>
       </div>
       <Footer></Footer>

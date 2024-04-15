@@ -1,0 +1,129 @@
+{
+  "commercial_estates": [
+    {
+      "id": 1,
+      "estate_title": "Modern Office Space in Downtown",
+      "segment_name": "Commercial",
+      "description": "Spacious and well-lit office space located in the heart of the city.",
+      "price": "$5000/month",
+      "status": "rent",
+      "area": "3000 sq ft",
+      "location": "Downtown, City Center",
+      "facilities": ["Open workspace", "Conference rooms", "Kitchenette"],
+      "image": "office_space_image.jpg",
+      "view_property_button": "View Property"
+    },
+    {
+      "id": 2,
+      "estate_title": "Prime Retail Space on Main Street",
+      "segment_name": "Commercial",
+      "description": "High-visibility retail space suitable for a variety of businesses.",
+      "price": "$1,000,000",
+      "status": "sale",
+      "area": "5000 sq ft",
+      "location": "Main Street, Shopping District",
+      "facilities": ["Storefront windows", "Storage area", "Parking lot"],
+      "image": "retail_space_image.jpg",
+      "view_property_button": "View Property"
+    },
+    {
+      "id": 3,
+      "estate_title": "Tech Startup Incubator Space",
+      "segment_name": "Commercial",
+      "description": "Purpose-built space designed to foster collaboration among tech startups.",
+      "price": "$7500/month",
+      "status": "rent",
+      "area": "2000 sq ft",
+      "location": "Innovation Park",
+      "facilities": [
+        "Shared workstations",
+        "Meeting rooms",
+        "High-speed internet"
+      ],
+      "image": "tech_incubator_image.jpg",
+      "view_property_button": "View Property"
+    },
+    {
+      "id": 4,
+      "estate_title": "Industrial Warehouse with Loading Dock",
+      "segment_name": "Commercial",
+      "description": "Large warehouse with ample storage space and convenient loading facilities.",
+      "price": "$2,000,000",
+      "status": "sale",
+      "area": "10000 sq ft",
+      "location": "Industrial Zone, Port District",
+      "facilities": ["Loading dock", "High ceilings", "Office area"],
+      "image": "warehouse_image.jpg",
+      "view_property_button": "View Property"
+    },
+    {
+      "id": 5,
+      "estate_title": "Luxury Office Tower",
+      "segment_name": "Commercial",
+      "description": "State-of-the-art office tower offering premium amenities and panoramic views.",
+      "price": "$20,000,000",
+      "status": "sale",
+      "area": "50000 sq ft",
+      "location": "Financial District",
+      "facilities": ["Executive suites", "Fitness center", "Sky lounge"],
+      "image": "luxury_office_tower_image.jpg",
+      "view_property_button": "View Property"
+    },
+    {
+      "id": 6,
+      "estate_title": "Commercial Land for Development",
+      "segment_name": "Commercial",
+      "description": "Large parcel of land suitable for commercial development projects.",
+      "price": "$5,000,000",
+      "status": "sale",
+      "area": "10 acres",
+      "location": "Suburban Business Park",
+      "facilities": [
+        "Zoned for commercial use",
+        "Road frontage",
+        "Utilities available"
+      ],
+      "image": "commercial_land_image.jpg",
+      "view_property_button": "View Property"
+    },
+    {
+      "id": 7,
+      "estate_title": "Downtown Restaurant Space",
+      "segment_name": "Commercial",
+      "description": "Fully-equipped restaurant space in a bustling downtown location.",
+      "price": "$8000/month",
+      "status": "rent",
+      "area": "2500 sq ft",
+      "location": "Downtown, Entertainment District",
+      "facilities": ["Commercial kitchen", "Outdoor seating", "Bar area"],
+      "image": "restaurant_space_image.jpg",
+      "view_property_button": "View Property"
+    },
+    {
+      "id": 8,
+      "estate_title": "Medical Office Complex",
+      "segment_name": "Commercial",
+      "description": "Specialized medical office complex with advanced facilities for healthcare providers.",
+      "price": "$15,000,000",
+      "status": "sale",
+      "area": "20000 sq ft",
+      "location": "Medical District",
+      "facilities": ["Exam rooms", "Diagnostic imaging", "Surgical suites"],
+      "image": "medical_office_complex_image.jpg",
+      "view_property_button": "View Property"
+    },
+    {
+      "id": 9,
+      "estate_title": "Co-working Space for Creatives",
+      "segment_name": "Commercial",
+      "description": "Collaborative workspace designed for creative professionals and startups.",
+      "price": "$3000/month",
+      "status": "rent",
+      "area": "1500 sq ft",
+      "location": "Arts District",
+      "facilities": ["Art studio", "Meeting spaces", "Coffee bar"],
+      "image": "coworking_space_image.jpg",
+      "view_property_button": "View Property"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="p-4  text-black-100 sticky z-10">
+    <header className="p-4 bg-gray-100 text-black-100 sticky z-10">
       <div className="container flex justify-between h-16 mx-auto">
         <a
           rel="noopener noreferrer"
@@ -61,8 +61,7 @@ const Navbar = () => {
           </li>
           <li className="flex">
             <NavLink
-              rel="noopener noreferrer"
-              href="#"
+              to='/userProfile'
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
             >
               User Profile
@@ -80,20 +79,9 @@ const Navbar = () => {
         </ul>
 
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              />
-            </div>
-          </div>
+          
 
-          {user ? (
+          {/* {user ? (
             <button
               onClick={handleLogOut}
               className="self-center px-6 py-2 font-semibold rounded bg-violet-400 text-gray-900"
@@ -106,8 +94,60 @@ const Navbar = () => {
                 Login
               </button>
             </Link>
+          )} */}
+
+
+          
+
+
+          {user ? (
+            
+            <button className="dropdown rounded-2xl dropdown-end tooltip-left tooltip " data-tip="Name">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost  btn-circle avatar"
+            >
+              <div className="w-15 border-4 border-green-600 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <Link
+                to='/userProfile'
+                className="justify-between">
+                  View Profile
+                  <span className="badge">New</span>
+                </Link>
+              </li>
+              <li>
+                <a>Settings</a>
+              </li>
+              <li onClick={handleLogOut}>
+                <a>Logout</a>
+              </li>
+            </ul>
+          </button>
+          
+          ) : (
+            <Link to="/login">
+              <button className="self-center px-8 py-3 font-semibold rounded bg-violet-400 text-gray-900">
+                Login
+              </button>
+            </Link>
           )}
+
         </div>
+
+        
+
         <button className="p-4  lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
