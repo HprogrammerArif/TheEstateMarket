@@ -5,8 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-
-  const {loginUser} = useContext(AuthContex);
+  const { loginUser, googleLogin, githubLogin } = useContext(AuthContex);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,20 +14,53 @@ const Login = () => {
     const password = form.get("password");
     console.log(email, password);
 
-
     loginUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+
+        // Show success toast
+        toast.success("Login Successful");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+
+  // googleLogin
+  const handleGoogleLogin = () => {
+    googleLogin()
     .then(result => {
       const user = result.user;
       console.log(user);
 
       // Show success toast
-      toast.success('Login Successful');
+      toast.success("Login Successful");
     })
-    .catch(error => {
-      console.log(error.message);
+    .catch(errors => {
+      const errMsg = errors.message;
+      console.log(errMsg);
     })
+  }
 
-  };
+
+  // Github Login
+  const handleGithubLogin = () => {
+    githubLogin()
+    .then(result => {
+      const user = result.user;
+      console.log(user);
+
+      // Show success toast
+      toast.success("Login Successful");
+    })
+    .catch(errors => {
+      const errMsg = errors.message;
+      console.log(errMsg);
+    })
+  }
+
 
   return (
     <div>
@@ -66,6 +98,23 @@ const Login = () => {
                     Forgot password?
                   </a>
                 </label>
+
+                <div className="flex gap-4">
+                <Link
+                  className="font-bold text-blue-600 underline"
+                  onClick={handleGoogleLogin}
+                >
+                  Google
+                </Link>
+
+                <Link
+                  className="font-bold text-green-600 underline"
+                  onClick={handleGithubLogin}
+                >
+                  GitHub
+                </Link>
+                </div>
+
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
