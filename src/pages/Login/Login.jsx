@@ -1,11 +1,15 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContex } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const { loginUser, googleLogin, githubLogin } = useContext(AuthContex);
+
+  const loacation = useLocation();
+  const navigate = useNavigate();
+  console.log('location in the login page',loacation);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -21,6 +25,10 @@ const Login = () => {
 
         // Show success toast
         toast.success("Login Successful");
+
+        //redirect to home page or redirect page
+        // or navigate after login
+        navigate(loacation?.state? loacation.state: '/')
       })
       .catch((error) => {
         console.log(error.message);
@@ -37,6 +45,10 @@ const Login = () => {
 
       // Show success toast
       toast.success("Login Successful");
+
+      //redirect to home page or redirect page
+        // or navigate after login
+        navigate(loacation?.state? loacation.state: '/')
     })
     .catch(errors => {
       const errMsg = errors.message;

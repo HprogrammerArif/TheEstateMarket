@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const EstateCard = ({estate}) => {
 
 
@@ -7,7 +9,7 @@ const EstateCard = ({estate}) => {
 
   return (
     <div>
-      <div className="card card-compact bg-base-100 shadow-xl">
+      <div className="card card-compact  bg-base-100 shadow-xl ">
         <figure>
           <img
             src={image}
@@ -17,7 +19,9 @@ const EstateCard = ({estate}) => {
           <h2 className="card-title">{estate_title}</h2>
           <p>{description}</p>
           <div className="card-actions">
+            <Link to={`/details/${id}`}>
             <button className="btn btn-primary">View Details</button>
+            </Link>
           </div>
         </div>
       </div>
