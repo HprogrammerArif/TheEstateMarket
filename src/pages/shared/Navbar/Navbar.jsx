@@ -28,8 +28,8 @@ const Navbar = () => {
         >
           <div className="flex justify-center items-center">
             <img
-              className="w-16"
-              src="https://i.ibb.co/94tY23G/Screenshot-2024-04-13-203604.png"
+              className="w-12 mr-2"
+              src="https://i.ibb.co/QCqgHMY/logo.png"
               alt=""
             />
             <span className="font-black text-xl text-violet-600 mt-1">
@@ -52,6 +52,32 @@ const Navbar = () => {
 
           <li className="flex">
             <NavLink
+              to="error"
+              rel="noopener noreferrer"
+              href="#"
+              className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
+            >
+              Blogs
+            </NavLink>
+          </li>
+          
+          <li className="flex">
+            <NavLink
+              to="error"
+              rel="noopener noreferrer"
+              href="#"
+              className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
+            >
+              About
+            </NavLink>
+          </li>
+          
+
+          {user && (
+            <li className="flex">
+            <NavLink
+            
+              to="userProfile"
               rel="noopener noreferrer"
               href="#"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
@@ -59,28 +85,10 @@ const Navbar = () => {
               Update Profile
             </NavLink>
           </li>
-          <li className="flex">
-            <NavLink
-              to='/userProfile'
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
-            >
-              User Profile
-            </NavLink>
-          </li>
-          <li className="flex">
-            <NavLink
-              rel="noopener noreferrer"
-              href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
-            >
-              Link
-            </NavLink>
-          </li>
+          )}
         </ul>
 
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          
-
           {/* {user ? (
             <button
               onClick={handleLogOut}
@@ -96,57 +104,66 @@ const Navbar = () => {
             </Link>
           )} */}
 
-
-          
-
-
           {user ? (
-            
-            <button className="dropdown rounded-2xl dropdown-end tooltip-left tooltip " data-tip="Name">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost  btn-circle avatar"
-            >
-              <div className="w-15 border-4 border-green-600 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                />
-              </div>
-            </div>
-            <ul
-              tabIndex={0}
-              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <Link
-                to='/userProfile'
-                className="justify-between">
-                  View Profile
-                  <span className="badge">New</span>
-                </Link>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li onClick={handleLogOut}>
+            <>
+              <button
+                className="btn bg-purple-500 text-gray-100 font-bold mr-6"
+                onClick={handleLogOut}
+              >
                 <a>Logout</a>
-              </li>
-            </ul>
-          </button>
-          
-          ) : (
-            <Link to="/login">
-              <button className="self-center px-8 py-3 font-semibold rounded bg-violet-400 text-gray-900">
-                Login
               </button>
-            </Link>
+
+              <button
+                className="dropdown rounded-2xl dropdown-end tooltip-left tooltip "
+                data-tip="Name"
+              >
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost  btn-circle avatar"
+                >
+                  <div className="w-15 border-4 border-green-600 rounded-full">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    />
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <Link to="/userProfile" className="justify-between">
+                      View Profile
+                      <span className="badge">New</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <a>Settings</a>
+                  </li>
+                  <li onClick={handleLogOut}>
+                    <a>Logout</a>
+                  </li>
+                </ul>
+              </button>
+            </>
+          ) : (
+            <>
+              <Link className="mr-5" to="/register">
+                <button className="self-center px-4 py-3 font-semibold rounded bg-green-400 text-gray-900">
+                  Register
+                </button>
+              </Link>
+
+              <Link to="/login">
+                <button className="self-center px-6 py-3 font-semibold rounded bg-violet-400 text-gray-900">
+                  Login
+                </button>
+              </Link>
+            </>
           )}
-
         </div>
-
-        
 
         <button className="p-4  lg:hidden">
           <svg

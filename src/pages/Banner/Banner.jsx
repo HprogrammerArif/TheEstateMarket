@@ -1,77 +1,46 @@
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+ import './style.css';
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+
+
 const Banner = () => {
   return (
-    <div className="carousel min-h-96 w-full rounded-2xl">
-      <div id="slide1" className="carousel-item relative w-full">
-        <img
-          src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
-          className="w-full"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide4" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide2" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide2" className="carousel-item relative w-full">
-        <img
-          src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
-          className="w-full"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide1" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide3" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide3" className="carousel-item relative w-full">
-        <img
-          src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
-          className="w-full"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide2" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide4" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide4" className="carousel-item relative w-full">
-        <img
-          src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
-          className="w-full"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide3" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide1" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide4" className="carousel-item relative w-full">
-        <img
-          src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
-          className="w-full"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide3" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide1" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-    </div>
+    <>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide ><img  src="https://i.ibb.co/34FqjF4/photo-1560448204-e02f11c3d0e2-q-80-w-1470-auto-format-fit-crop-ixlib-rb-4-0.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/VQqv67j/amsterdam-4167026-1280.png" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/s9GpKNf/houses-1719055-1280.png" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/0GtnK4h/photo-1486406146926-c627a92ad1ab-q-80-w-1470-auto-format-fit-crop-ixlib-rb-4-0.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/mchT4Z3/train-8517089-1280.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/pPjg3Kr/photo-1469565686301-a0cf06bacf92-q-80-w-1473-auto-format-fit-crop-ixlib-rb-4-0.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/CJyY90W/photo-1555396273-367ea4eb4db5-q-80-w-1374-auto-format-fit-crop-ixlib-rb-4-0.jpg" alt="" /></SwiperSlide>
+        
+      </Swiper>
+    </>
     
   );
 };
