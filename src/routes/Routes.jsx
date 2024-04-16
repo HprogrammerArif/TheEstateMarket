@@ -8,40 +8,41 @@ import UserProfile from "../pages/UserProfile/UserProfile";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import PrivateRoutes from "./PrivateRoutes";
 
-
-
-
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement:<NotFound></NotFound>
-    ,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
-        path: '/',
-        element:<Home></Home>,
-        loader: () => fetch('/commercial.json')
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch("/commercial.json"),
       },
       {
-        path: '/login',
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/register',
-        element: <Register></Register>
+        path: "/register",
+        element: <Register></Register>,
       },
       {
-        path: '/details/:id',
-        element: <PrivateRoutes>
-          <EstateDetails></EstateDetails>
-        </PrivateRoutes>
+        path: "/details/:id",
+        //loader: ({ params }) => fetch(`commercial.json${params.id}`),
+        loader: () => fetch("/commercial.json"),
+
+        element: (
+          <PrivateRoutes>
+            <EstateDetails></EstateDetails>
+          </PrivateRoutes>
+        ),
       },
       {
-        path: '/userProfile',
-        element: <UserProfile></UserProfile>
+        path: "/userProfile",
+        element: <UserProfile></UserProfile>,
       },
-    ]
+    ],
   },
 ]);
 

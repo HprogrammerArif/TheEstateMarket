@@ -11,7 +11,7 @@ const EstateCard = ({estate}) => {
     <div>
       <div className="card card-compact  bg-base-100 shadow-xl ">
         <figure>
-          <img
+          <img className="max-h-[270px] w-full"
             src={image}
           />
         </figure>
