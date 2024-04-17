@@ -73,7 +73,7 @@ const Navbar = () => {
 
           <li className="flex">
             <NavLink
-              to="error"
+              to="/blogs"
               rel="noopener noreferrer"
               href="#"
               className= {({isActive}) => isActive? 'flex items-center px-4 -mb-1 border-b-2  text-violet-600 border-violet-400': 'font-bold flex items-center px-4 -mb-1'}
