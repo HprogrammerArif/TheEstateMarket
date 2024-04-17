@@ -7,6 +7,8 @@ import NotFound from "../pages/Error/NotFound";
 import UserProfile from "../pages/UserProfile/UserProfile";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import PrivateRoutes from "./PrivateRoutes";
+import Contact from "../pages/Contact/Contact";
+import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
         path: "/details/:id",
         //loader: ({ params }) => fetch(`commercial.json${params.id}`),
         loader: () => fetch("/commercial.json"),
@@ -41,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/userProfile",
         element: <UserProfile></UserProfile>,
+      },
+      {
+        path: "/updateProfile",
+        element: <UpdateProfile></UpdateProfile>
       },
     ],
   },

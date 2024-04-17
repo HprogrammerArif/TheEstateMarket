@@ -1,12 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContex } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { loginUser, googleLogin, githubLogin } = useContext(AuthContex);
+  const [showPassword, setShowPassword] = useState(false);
 
   const loacation = useLocation();
   const navigate = useNavigate();
@@ -33,6 +35,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error.message);
+        toast.error(error.message);
       });
   };
 
@@ -54,6 +57,7 @@ const Login = () => {
     .catch(errors => {
       const errMsg = errors.message;
       console.log(errMsg);
+      toast.error(errMsg.message);
     })
   }
 
@@ -67,6 +71,10 @@ const Login = () => {
 
       // Show success toast
       toast.success("Login Successful");
+
+      // //redirect to home page or redirect page
+      //   // or navigate after login
+      //   navigate(loacation?.state? loacation.state: '/')
     })
     .catch(errors => {
       const errMsg = errors.message;
@@ -102,13 +110,25 @@ const Login = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  name="password"
-                  required
-                />
+
+
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="password"
+                    className="input input-bordered w-full"
+                    name="password"
+                    required
+                  />
+                  <span
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="cursor-pointer absolute bottom-4 right-5 text-xl"
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                </div>
+
+
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
@@ -146,10 +166,21 @@ const Login = () => {
                   </Link>{" "}
                 </small>
               </div>
-              <ToastContainer />
             </form>
           </div>
         </div>
+      <ToastContainer 
+      className="w-[80%] z-30 max-w-[400px] text-3xl"
+      position="top-center"
+      autoClose={3000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      />
       </div>
     </div>
   );

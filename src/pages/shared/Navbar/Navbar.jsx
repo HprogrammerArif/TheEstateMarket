@@ -38,7 +38,7 @@ const Navbar = () => {
   };
   
   return (
-    <header className="p-4 bg-gray-100 text-black-100 sticky z-10">
+    <header className="p-4 bg-gray-50 text-black-100 sticky z-10">
       <div className="container flex justify-between h-16 mx-auto">
         <a
           rel="noopener noreferrer"
@@ -64,7 +64,8 @@ const Navbar = () => {
               to="/"
               rel="noopener noreferrer"
               href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border- text-violet-400 border-violet-400"
+              className= {({isActive}) => isActive? 'flex items-center px-4 -mb-1 border-b-2  text-violet-600 border-violet-400': 'font-bold flex items-center px-4 -mb-1'}
+              
             >
               Home
             </NavLink>
@@ -75,7 +76,7 @@ const Navbar = () => {
               to="error"
               rel="noopener noreferrer"
               href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
+              className= {({isActive}) => isActive? 'flex items-center px-4 -mb-1 border-b-2  text-violet-600 border-violet-400': 'font-bold flex items-center px-4 -mb-1'}
             >
               Blogs
             </NavLink>
@@ -83,12 +84,12 @@ const Navbar = () => {
           
           <li className="flex">
             <NavLink
-              to="error"
+              to="/contact"
               rel="noopener noreferrer"
               href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
+              className= {({isActive}) => isActive? 'flex items-center px-4 -mb-1 border-b-2  text-violet-600 border-violet-400': 'font-bold flex items-center px-4 -mb-1'}
             >
-              About
+              Contact
             </NavLink>
           </li>
           
@@ -97,10 +98,10 @@ const Navbar = () => {
             <li className="flex">
             <NavLink
             
-              to="userProfile"
+              to="updateProfile"
               rel="noopener noreferrer"
               href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
+              className= {({isActive}) => isActive? 'flex items-center px-4 -mb-1 border-b-2  text-violet-600 border-violet-400': 'font-bold flex items-center px-4 -mb-1'}
             >
               Update Profile
             </NavLink>
@@ -135,7 +136,7 @@ const Navbar = () => {
 
               <button
                 className="dropdown rounded-2xl dropdown-end tooltip-left tooltip "
-                data-tip='user name'
+                data-tip={user.displayName}
               >
                 <div
                   tabIndex={0}
@@ -145,7 +146,7 @@ const Navbar = () => {
                   <div className="w-15 border-4 border-green-600 rounded-full">
                     <img
                       alt="Tailwind CSS Navbar component"
-                     // src={photoURL}
+                     src={user.photoURL}
                     />
                   </div>
                 </div>

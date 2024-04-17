@@ -4,10 +4,12 @@ import { AuthContex } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const { createUser } = useContext(AuthContex);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -22,7 +24,7 @@ const Register = () => {
     // VALIDATION
     if (password.length < 6) {
       setError("Password must be 6 charcacter");
-      
+
       return;
     }
     if (!/[a-z]/.test(password)) {
@@ -33,37 +35,35 @@ const Register = () => {
       setError("Password must contain One UpperCase");
       return;
     }
-    
-    setError("")
+
+    setError("");
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
 
-         // Show success toast
-         toast.success('Registration Successful');
+        // Show success toast
+        toast.success("Registration Successful");
 
         //  navigate
-        navigate('/')
+        navigate("/");
       })
       .catch((errors) => {
         console.log(errors);
-        
-          toast.error(errors.message);
-         
+
+        toast.error(errors.message);
       });
   };
 
   // Display toast if there's an error
   if (error) {
     toast.error(error);
-  } 
-  
+  }
+
   // else{
   //   toast.success('Registration Successfull');
   // }
-  
 
   return (
     <div>
@@ -116,13 +116,23 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  name="password"
-                  required
-                />
+
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="password"
+                    className="input input-bordered w-full"
+                    name="password"
+                    required
+                  />
+                  <span
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="cursor-pointer absolute bottom-4 right-5 text-xl"
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                </div>
+
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
@@ -144,7 +154,7 @@ const Register = () => {
                   </Link>{" "}
                 </small>
               </div>
-              
+
               {/* {error && (
                 <>
                 
@@ -154,7 +164,6 @@ const Register = () => {
               )} */}
               <ToastContainer />
             </form>
-            
           </div>
         </div>
       </div>

@@ -1,6 +1,14 @@
 WEBSITE NAME: TheEstateMarket
 Live URL: https://theestatemarket.web.app/
 
+
+PACKAGE NAME:
+A. Animate.css 
+B. Swiper slider
+C. React-leaflet, ==> use little bit. i have tried my best. Look contact section for your refference
+
+
+
 FIVE NOTEABLE FEATURE:
 1. Property Listings
 2. Added GitHub, Email Password and Google Authentication with validation
