@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const EstateDetails = () => {
@@ -38,6 +39,10 @@ const EstateDetails = () => {
 
   // Return JSX to display estate details
   return (
+    <div>
+    <Helmet>
+        <title>TheEstateMarket || Details</title>
+      </Helmet>
     <div className="dark:bg-gray-100 dark:text-gray-900 mt-6">
       <div className="container grid grid-cols-12 mx-auto dark:bg-gray-50">
         <div
@@ -98,6 +103,7 @@ const EstateDetails = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContex } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser } = useContext(AuthContex);
@@ -66,6 +67,9 @@ const Register = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>TheEstateMarket || Register</title>
+      </Helmet>
       <h2 className="text-3xl text-center">Please Register</h2>
 
       <div className="hero mt-0">

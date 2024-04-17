@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContex } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { loginUser, googleLogin, githubLogin } = useContext(AuthContex);
@@ -76,6 +77,9 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>TheEstateMarket || Login</title>
+      </Helmet>
       <h2 className="text-3xl text-center">Please login</h2>
 
       <div className="hero mt-5">

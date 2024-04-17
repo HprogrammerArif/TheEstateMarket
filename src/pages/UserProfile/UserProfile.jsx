@@ -1,16 +1,33 @@
+import { useContext } from "react";
+import { AuthContex } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
+
 const UserProfile = () => {
+  const { user } = useContext(AuthContex);
+
+  if (!user) {
+    return <h1>Loading...</h1>; // Or any other loading indicator
+  }
+
+  const {displayName, email, photoURL  } = user;
+  //console.log(displayName);
+
   return (
+    <div>
+      <Helmet>
+        <title>TheEstateMarket || User Profile</title>
+      </Helmet>
     <div className="max-w-md mx-auto  p-8 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800">
       <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
         <img
-          src="https://source.unsplash.com/100x100/?portrait?1"
+          src={photoURL}
           alt=""
           className="object-cover object-center w-full h-full rounded dark:bg-gray-500"
         />
       </div>
       <div className="flex flex-col space-y-4">
         <div>
-          <h2 className="text-2xl font-semibold">Leroy Jenkins</h2>
+          <h2 className="text-2xl font-semibold">{displayName}</h2>
           <span className="text-sm dark:text-gray-600">General manager</span>
         </div>
         <div className="space-y-1">
@@ -27,7 +44,7 @@ const UserProfile = () => {
               ></path>
             </svg>
             <span className="dark:text-gray-600">
-              leroy.jenkins@company.com
+              {email}
             </span>
           </span>
           <span className="flex items-center space-x-2">
@@ -46,6 +63,7 @@ const UserProfile = () => {
           </span>
         </div>
       </div>
+    </div>
     </div>
   );
 };

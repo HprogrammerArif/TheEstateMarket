@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import EstateCard from "../EstateCard/EstateCard";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const estateNews = useLoaderData();
@@ -8,6 +9,9 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>TheEstateMarket || Home</title>
+      </Helmet>
       <div className="my-12">
       <Banner />
       </div>

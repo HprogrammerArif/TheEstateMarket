@@ -1,9 +1,29 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContex } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
+ // const [stateData, setStateData] = useState(null);
   const { user, logOut } = useContext(AuthContex);
+  //console.log(user);
+
+  // if (!user) {
+  //   return <h1>Loading...</h1>; // Or any other loading indicator
+  // }
+
+  // useEffect(() => {
+  //   setStateData(user);
+  // }, [user]);
+
+  // // Render error message if stateData is null
+  // if (!stateData) {
+  //   return <h1>Loading...</h1>;
+  // }
+
+  // if (user) {
+  //   const { displayName = "", photoURL = "" } = user;
+  // }
+  //console.log(displayName, photoURL);
 
   const handleLogOut = () => {
     logOut()
@@ -16,7 +36,7 @@ const Navbar = () => {
         console.log(errors);
       });
   };
-
+  
   return (
     <header className="p-4 bg-gray-100 text-black-100 sticky z-10">
       <div className="container flex justify-between h-16 mx-auto">
@@ -115,7 +135,7 @@ const Navbar = () => {
 
               <button
                 className="dropdown rounded-2xl dropdown-end tooltip-left tooltip "
-                data-tip="Name"
+                data-tip='user name'
               >
                 <div
                   tabIndex={0}
@@ -125,7 +145,7 @@ const Navbar = () => {
                   <div className="w-15 border-4 border-green-600 rounded-full">
                     <img
                       alt="Tailwind CSS Navbar component"
-                      src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                     // src={photoURL}
                     />
                   </div>
                 </div>
