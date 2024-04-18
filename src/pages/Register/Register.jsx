@@ -93,7 +93,7 @@ const Register = () => {
                   <span className="label-text">Photo URL</span>
                 </label>
                 <input
-                  type="text"
+                  type="url"
                   placeholder="PhotoURL"
                   className="input input-bordered"
                   name="photo"
