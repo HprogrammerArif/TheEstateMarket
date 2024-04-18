@@ -2,10 +2,11 @@ WEBSITE NAME: TheEstateMarket
 Live URL: https://theestatemarket.web.app/
 
 
+
 PACKAGE NAME:
-A. Animate.css 
+A. Animate.css => LOOK AT HOME PAGE CARD 
 B. Swiper slider
-C. React-leaflet, ==> i have tried my best. Look contact section for your refference
+C. React-leaflet, ==>  Look contact section for your refference
 
 
 
